@@ -16,10 +16,10 @@ class _PostsScreenState extends State<PostsScreen> {
     var Url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
     var response = await http.get(Url);
     var responsebody = jsonDecode(response.body);
-    listposts.add(responsebody);
-    for (var i in responsebody)
+   
+    for (var i in responsebody){
       listposts.add(Postss(i["userId"], i["id"], i["title"], i["body"]));
-
+     }
     return listposts;
   }
 
